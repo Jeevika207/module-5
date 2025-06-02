@@ -14,12 +14,14 @@ To write a C Program to find area of rectangle using pointer.
 #include <stdio.h>
 
 int main() {
-    float x, y, area;
+    float x, y,*px,*py, area;
+    *px=&x;
+    *py=&y;
     printf("Enter the length (x): ");
-    scanf("%f", &x);
+    scanf("%f", px);
     printf("Enter the width (y): ");
-    scanf("%f", &y);
-    area = x * y;
+    scanf("%f", py);
+    area = (*px) * (*py);
     printf("The area of the rectangle is: %.2f\n", area);
     return 0;
 }
